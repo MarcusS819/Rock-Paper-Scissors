@@ -7,20 +7,14 @@
 
     <!--Buttons-->
     <button onclick="
-        const computerChoice = pickComputerChoice();
-
         playerChoice('Rock');
         ">Rock</button>
 
     <button onclick="
-        const computerChoice = pickComputerChoice();
-
         playerChoice('Paper');
         ">Paper</button>
 
     <button onclick="
-        const computerChoice = pickComputerChoice();
-
         playerChoice('Scissors')
         ">Scissors</button>
 
@@ -42,6 +36,8 @@
 
         function playerChoice(playerOption)
         {
+            const computerChoice = pickComputerChoice();
+            
             if(playerOption === 'Rock')
             {
                 if (computerChoice === 'Rock')
