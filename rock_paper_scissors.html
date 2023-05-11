@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+    </head>
+<body>
+    <h1>Rock, Paper, Scissors</h1>
+
+    <!--Buttons-->
+    <button onclick="
+        const computerChoice = pickComputerChoice();
+
+        playerChoice('Rock');
+        ">Rock</button>
+
+    <button onclick="
+        const computerChoice = pickComputerChoice();
+
+        playerChoice('Paper');
+        ">Paper</button>
+
+    <button onclick="
+        const computerChoice = pickComputerChoice();
+
+        playerChoice('Scissors')
+        ">Scissors</button>
+
+    <!--Functions-->
+    <script>
+        function pickComputerChoice()
+        {
+            const randomNumber = Math.random();
+
+            if(randomNumber >= 0 && randomNumber < 1/3)
+                computerChoice = 'Rock';
+            else if(randomNumber >= 1/3 && randomNumber < 2/3)
+                computerChoice = 'Paper';
+            else if(randomNumber >= 2/3 && randomNumber < 1)
+                computerChoice = 'Scissors';
+
+            return computerChoice;
+        }
+
+        function playerChoice(playerOption)
+        {
+            if(playerOption === 'Rock')
+            {
+                if (computerChoice === 'Rock')
+                    alert(`Tie. \nYou chose ${playerOption} and computer chose ${computerChoice}`);
+                else if(computerChoice === 'Paper')
+                    alert(`Lose. \nYou chose ${playerOption} and computer chose ${computerChoice}`);
+                else if (computerChoice === 'Scissors')
+                    alert(`Win. \nYou chose ${playerOption} and computer chose ${computerChoice}`);
+            }
+            else if(playerOption === 'Paper')
+            {
+                if (computerChoice === 'Rock')
+                    alert(`Win. \nYou chose ${playerOption} and computer chose ${computerChoice}`);
+                else if(computerChoice === 'Paper')
+                    alert(`Tie. \nYou chose ${playerOption} and computer chose ${computerChoice}`);
+                else if (computerChoice === 'Scissors')
+                    alert(`Lose. \nYou chose ${playerOption} and computer chose ${computerChoice}`);
+            }
+            else if(playerOption === 'Scissors')
+            {
+                if (computerChoice === 'Rock')
+                    alert(`Lose. \nYou chose ${playerOption} and computer chose ${computerChoice}`);
+                else if(computerChoice === 'Paper')
+                    alert(`Win. \nYou chose ${playerOption} and computer chose ${computerChoice}`);
+                else if (computerChoice === 'Scissors')
+                    alert(`Draw. \nYou chose ${playerOption} and computer chose ${computerChoice}`);
+            }
+        }
+    </script>
+
+    </body>
+</html>
